@@ -9,8 +9,10 @@ import { ConsultacomponentComponent } from './componentes/consultacomponent/cons
 import { ListadocomponentComponent } from './componentes/listadocomponent/listadocomponent.component';
 import { ToledocomponentComponent } from './componentes/toledocomponent/toledocomponent.component';
 import { MadridcomponentComponent } from './componentes/madridcomponent/madridcomponent.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
+import { InicioComponent } from './componentes/inicio/inicio.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -26,7 +28,8 @@ import { MatListModule } from '@angular/material/list';
     ListadocomponentComponent,
     ToledocomponentComponent,
     MadridcomponentComponent,
-    BarraLateralComponent
+    BarraLateralComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

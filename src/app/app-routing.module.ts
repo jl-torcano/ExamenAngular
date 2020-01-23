@@ -4,22 +4,25 @@ import { MadridcomponentComponent } from './componentes/madridcomponent/madridco
 import { ToledocomponentComponent } from './componentes/toledocomponent/toledocomponent.component';
 import { ListadocomponentComponent } from './componentes/listadocomponent/listadocomponent.component';
 import { ConsultacomponentComponent } from './componentes/consultacomponent/consultacomponent.component';
+import { InicioComponent } from './componentes/inicio/inicio.component';
 
 
-const routes: Routes = [
-  {
-    path: 'madrid',
-    component: MadridcomponentComponent
-  }, {
-    path: 'toledo',
-    component: ToledocomponentComponent
-  },{
-    path: 'listado',
-    component: ListadocomponentComponent
-  },{
-    path: 'consulta',
-    component: ConsultacomponentComponent
-  }];
+const routes: Routes = [{
+  path:'',
+  component: InicioComponent
+}, {
+  path: 'madrid',
+  component: MadridcomponentComponent
+}, {
+  path: 'toledo',
+  component: ToledocomponentComponent
+}, {
+  path: 'listado',
+  component: ListadocomponentComponent
+}, {
+  path: 'consulta',
+  component: ConsultacomponentComponent
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

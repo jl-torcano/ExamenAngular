@@ -1,16 +1,23 @@
-<h2>Listado de Empleados</h2> 
+<div class="container col-6 offset-1">
+    <div class="row" >
+        <h2>Listado de Empleados</h2>
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de Empleado</th>
+                    <th>Sueldo</th>
+                    <th>Edad</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let empleado of listado">
+                <td>{{empleado.id}}</td>
+                <td>{{empleado.employee_name}}</td>
+                <td>{{empleado.employee_salary}}</td>
+                <td>{{empleado.employee_age}}</td>
+            </tr>
+        </table>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Nombre de Empleado</th>
-        <th>Sueldo</th>
-        <th>Edad</th>
-    </tr>
-    <tr *ngFor="let empleado of listado">
-        <td>{{empleado.id}}</td>
-        <td>{{empleado.employee_name}}</td>
-        <td>{{empleado.employee_salary}}</td>
-        <td>{{empleado.employee_age}}</td>
-    </tr>
-</table>
+    </div>
+
+</div>

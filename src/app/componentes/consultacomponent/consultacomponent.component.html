@@ -1,41 +1,57 @@
-<h2>Consulta información de empleado</h2>
+<div class="container col-6 offset-1">
+    <h2>Consulta información de empleado</h2>
+</div>
 
-<form (submit)="consulta(emp.id, ipc)" #formu="ngForm">
 
-    <label for="id">Numero de Identificacion</label>
-    <input type="text" required autocomplete="off" name="id" id="id" [(ngModel)]="emp.id" #id="ngModel">
+<div class="container col-2 offset-1">
 
-    <div *ngIf="id.invalid && (id.dirty || id.touched)">
-        <div *ngIf="id.errors.required">
-            <h3>Introduzca el ID de empleado</h3>
+
+
+    <form (submit)="consulta(emp.id, ipc)" #formu="ngForm">
+        <div class="form-group">
+
+            <label for="id" placeholder="ID">Numero de ID</label>
+            <input type="text" required class="form-control" autocomplete="off" name="id" id="id" [(ngModel)]="emp.id"
+                #id="ngModel">
+
+            <div class="alert alert-danger" *ngIf="id.invalid && (id.dirty || id.touched)">
+                <div *ngIf="id.errors.required">
+                    <p>ID obligatorio</p>
+                </div>
+            </div>
+
+            <br>
+            <label for="ipc" placeholder="IPC">Subida del IPC</label>
+            <input type="text" class="form-control" autocomplete="off" name="ipc" id="ipc" [(ngModel)]="ipc">
+            <br>
+            <button type="submit" class="btn btn-dark" [disabled]="!formu.form.valid">Buscar Empleado</button>
         </div>
+    </form>
+
+</div>
+<br><br>
+
+
+<div class="container col-6 offset-1" *ngIf="emp.employee_salary!=''">
+    <div class="row">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Salario Base</th>
+                    <th>IPC</th>
+                    <th>Salario Actualizado</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>{{emp.id}}</td>
+                <td>{{emp.employee_name}}</td>
+                <td>{{emp.employee_salary}}</td>
+                <td>{{ipc}}</td>
+                <td>{{sueldoipc}}</td>
+            </tr>
+        </table>
     </div>
 
-    <br><br>
-
-    <label for="ipc">IPC</label>
-    <input type="text" autocomplete="off" name="ipc" id="ipc" [(ngModel)]="ipc">
-    
-    <button type="submit" [disabled]="!formu.form.valid">Buscar Empleado</button>
-
-</form>
-<br><br>
-<div *ngIf="emp.employee_salary!=''">
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Salario Base</th>
-            <th>IPC</th>
-            <th>Salario Actualizado</th>
-        </tr>
-        <tr>
-            <td>{{emp.id}}</td>
-            <td>{{emp.employee_name}}</td>
-            <td>{{emp.employee_salary}}</td>
-            <td>{{ipc}}</td>
-            <td>{{sueldoipc}}</td>
-        </tr>
-    </table>
-   
 </div>
